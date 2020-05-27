@@ -2,7 +2,7 @@
   "name": "u-develop-it",
   "version": "1.0.0",
   "description": "Application using MySQL that will hold databases about employee information",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest",
     "migrate": "sqlite3 db/election.db < db/schema.sql",
@@ -22,6 +22,11 @@
   },
   "homepage": "https://github.com/nicolewallace09/u-develop-it#readme",
   "dependencies": {
+    "express": "^4.17.1",
+    "sqlite": "^4.0.9",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
     "jest": "^26.0.1"
   }
 }
