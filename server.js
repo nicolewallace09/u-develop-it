@@ -30,6 +30,11 @@ const db = new sqlite3.Database('./db/election.db', err => {
 //     });
 // }); 
 
+// all runs the SQL query and executes the callback with all the resulting rows 
+db.all(`SELECT * FROM candidates`, (err, row) => {
+  console.log(rows); 
+}); 
+
 // default response for any other request (Not Found) Catch all
 app.use((req, res) => {
     res.status(404).end();
@@ -42,3 +47,4 @@ db.on('open', () => {
         console.log(`Server is running on port ${PORT}`); 
     }); 
 }); 
+
