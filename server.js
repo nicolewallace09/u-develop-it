@@ -93,22 +93,6 @@ app.get('/api/candidate/:id', (req, res) => {
   });
 }); 
 
-// delete a candidate 
-app.delete('/api/candidate/:id', (req, res) => {
-  const sql = `DELETE FROM candidates WHERE id = ?`; 
-  const params = [req.params.id]; 
-  db.run(sql, params, function(err, result) {
-    if (err) {
-      res.status(400).json({ error: res.message });
-      return; 
-    }
-    res.json({
-      message: 'successfully deleted',
-      changes: this.changes
-    });
-  });
-}); 
-
 // create a candidate - verify info 
 app.post('/api/candidate', ({ body }, res) => {
   const errors = inputCheck(body, 'first_name', 'last_name', 'industry_connected');
@@ -174,6 +158,22 @@ app.put('/api/candidate/:id', (req,res) => {
     res.json({ 
       message: 'success', 
       data: req.body,
+      changes: this.changes
+    });
+  });
+}); 
+
+// delete a candidate 
+app.delete('/api/candidate/:id', (req, res) => {
+  const sql = `DELETE FROM candidates WHERE id = ?`; 
+  const params = [req.params.id]; 
+  db.run(sql, params, function(err, result) {
+    if (err) {
+      res.status(400).json({ error: res.message });
+      return; 
+    }
+    res.json({
+      message: 'successfully deleted',
       changes: this.changes
     });
   });
