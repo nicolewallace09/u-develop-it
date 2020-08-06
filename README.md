@@ -13,7 +13,7 @@ A SQLite command-line voting application that will preform CRUD operations on da
 * [Questions](#questions)
 
 ## Installation 
-The user should clone the repository from GitHub. This application requires Node.js, Express, and mysql2. To view database from MySQL `run mysql -u root -p`. 
+The user should clone the repository from GitHub. This application requires Node.js, Express, and mysqlite3. To view database from MySQL run `mysqlite3 db/election.db`. 
 
 ## Usage 
 This application is for users to create an election.db in mySQL so that users have access to candidate, party, and vote data. 
